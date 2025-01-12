@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="dot net templates  | aspxtemplates.com">
+    <meta name="author" content="aspxtemplates.com">
+    <!-- Bootstrap Core CSS -->
+    <title>Blood Bank</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="css/owl/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.theme.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.transitions.css" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet'
+        type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700"
+        rel="stylesheet" type="text/css" />
+    <!-- Required plugin - Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->  
+
+    <asp:ContentPlaceHolder ID="head" runat="server">   
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!-- Header Navbar fixed top -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header" style="float:right;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.aspx"><i><img src="img/Mainlogo.png" width="130px" height="40px" /> </i></a>
+            </div>
+            <div class="navbar-collapse collapse" style="float:left;font-size:14px;">
+                <!-- Left nav -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li runat="server" id="home"><a href="ContactUs.aspx">Contact Us</a></li>
+                    <li runat="server" id="portfolio"><a href="registeration.aspx">New Donor</a></li>
+                    <li class="dropdown" runat="server" id="blog"><a style="cursor:pointer">Services</a>
+                        <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                            <li><a href="Donar.aspx">Search for Donor</a></li>
+                            <li><a href="bloodtype.aspx">Search Blood Type</a></li>
+                          <%--  <li><a href="#">News and Events</a></li>--%>
+                        </ul>
+                    </li>
+                  
+                      <%-- <div class="navbar-form" role="search">
+                            <div class="input-group">
+                                <asp:TextBox ID="txtsearch" runat="server" placeholder="Search the site" class="form-control"></asp:TextBox>
+                                <span class="input-group-btn">
+                                    <asp:LinkButton runat="server" ID="lbsearch" ToolTip="Search" CssClass="btn btn-default"
+                                        Text='<i class="glyphicon glyphicon-search"></i>' />
+                                </span>
+                            </div>
+                        </div>--%>
+                    </li>
+                    <li runat="server" id="LiLogin"><a href="login.aspx">Login</a></li>
+                 
+                    <li>
+                        <a style="cursor:pointer;" class="dropdown-toggle" data-toggle="dropdown" href="About Initiative.aspx">About Initiative <span class="caret"></span></a> 
+                    </li>
+                    <li runat="server" id="contact"><a href="index.aspx">Home</a></li>
+                    <li class="dropdown" runat="server" id="Li2"><asp:LinkButton ID="btnUserName" runat="server">Services</asp:LinkButton>
+                        <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                      
+                            <li runat="server" id="Li3">
+                    <asp:LinkButton runat="server" Visible="true" ID="LinkButton1" OnClick ="LinkButton1_Click">Edit Profile</asp:LinkButton>
+                    </li>
+                            
+                                   <li runat="server" id="Li1">
+                    <asp:LinkButton runat="server" Visible="False" ID="liLogOut" OnClick="liLogOut_Click">Logout</asp:LinkButton>
+                    </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%--main Content--%>
+    <div class="container-fluid">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer id="fh5co-footer" class="padding100">
+        <div class="fh5co-footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.2s">
+                        <h3 class="fh5co-lead">Who We Are</h3>
+                        <ul style="list-style-type: none; white-space: normal;">
+                            <li><a href="Aboutus.aspx">About Initiative</a></li>
+                            <li><a href="Donarconditions.aspx">Donation Conditions</a></li>
+                            <li><a href="FAQ.aspx">FAQs</a></li>
+                            <li><a href="Bloodinformation.aspx">Blood Information</a></li>
+                            <li><a href="ContactUs.aspx">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.4s">
+                        <h3 class="fh5co-lead">Services</h3>
+                        <ul style="list-style-type: none">
+                            <li><a href="Donar.aspx">Search Donor</a></li>
+                            <li><a href="bloodtype.aspx">Search Blood Type</a></li>
+                            <li><a href="#">Register as New Donor</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.6s">
+                        <h3 class="fh5co-lead">Additional Links</h3>
+                        <ul style="list-style-type: none">
+                            <li><a href="http://www.mohp.gov.eg/" target="_blank">Ministry of Health</a></li>
+                            <li><a href="http://bloodegy.weebly.com/" target="_blank">Egyptian Blood Bank</a></li>
+                            <li><a href="http://www.egyptianrc.org/arabic/home.aspx" target="_blank">Red Crescent</a></li>
+                            <li><a href="http://www.freeblood.com/" target="_blank">Arab Blood Donors</a></li>
+                            <li><a href="http://www.bloodbanker.com/" target="_blank">Blood Donors</a></li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+   </form>
+</body>
+</html>
