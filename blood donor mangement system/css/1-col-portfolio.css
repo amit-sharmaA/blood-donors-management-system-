@@ -28,6 +28,13 @@ float:left;
     padding: 0px;
     margin: 0px;
 }
+.container {
+            width: 95%; /* Set the container width to 100% */
+            padding: 0; /* Remove any padding */
+            margin: 10; /* Remove any margins */
+            max-width: 95%; /* Ensure the panel spans the full width */
+            width: 95%; /* Set width to 100% for full coverage */
+        }
 /*
 .navbar-new {
     background-color: #669900;

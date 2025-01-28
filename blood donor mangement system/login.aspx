@@ -2,28 +2,33 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
-         body {
-    background-image: url('img/222.jpg'); /* Use the cleaned image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Keep the background fixed */
-    background-repeat: no-repeat; /* Prevent repeating */
-    filter: none; /* Ensure no blur filter is applied */
-         }
+        body {
+            background-image: url('img/222.jpg'); /* Use the cleaned image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the background fixed */
+            background-repeat: no-repeat; /* Prevent repeating */
+            filter: none; /* Ensure no blur filter is applied */
+        }
+
         .auto-style2 {
             font-size: large;
             text-align: left;
             color: #333;
         }
+
         .auto-style3 {
             height: 46px;
         }
+
         .panel {
             border-radius: 8px;
             border: 1px solid #ccc;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: white; /* Panel background to improve readability */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 15px; /* Add padding for better spacing */
         }
+
         .panel-heading-custom {
             background-color: #007bff;
             color: white;
@@ -31,26 +36,30 @@
             font-size: 20px;
             padding: 10px 15px;
         }
+
         .form-control {
             border-radius: 6px;
         }
+
         .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-    width: 100%;
-    text-align: center; /* Center text inside the button */
-    display: flex; /* Ensure button behaves flexibly */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-}
+            background-color: #28a745;
+            border-color: #28a745;
+            width: 100%;
+            text-align: center; /* Center text inside the button */
+            display: flex; /* Ensure button behaves flexibly */
+            justify-content: center; /* Horizontally center content */
+            align-items: center; /* Vertically center content */
+        }
 
         .btn-success:hover {
             background-color: #218838;
         }
+
         a {
             color: #007bff;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -58,23 +67,23 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="padding100" dir="ltr" >
-        <div class="container">
+    <div class="padding100" dir="ltr">
+        <div class="container2">
             <div id="loginbox" style="margin-top: 50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-custom">
-                       User Login
+                        User Login
                     </div>
-                   <div style="padding-top: 100px; background-color: #cef2ee;" class="panel-body">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUsername" ErrorMessage="Please enter your username or email*" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <div class="panel-body" style="padding-top: 30px;">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLoginEmail" ErrorMessage="Please enter your email*" ForeColor="#CC0000"></asp:RequiredFieldValidator>
                         <div id="loginform" class="form-horizontal" role="form">
                             <div style="margin-bottom: 25px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <asp:TextBox runat="server" ID="txtUsername" CssClass="form-control" placeholder="Username or Email"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtLoginEmail" CssClass="form-control" placeholder="Enter Email" />
                             </div>
                             <div style="margin-bottom: 25px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" placeholder="Password" TextMode="Password" />
                             </div>
                             <div style="margin-top: 10px" class="form-group">
                                 <div class="col-sm-12 controls">
@@ -83,13 +92,12 @@
                                         <tr>
                                             <td class="auto-style3">
                                                 <asp:CheckBox ID="CheckBox1" runat="server" Text="Remember Me" />
-                                                <br />
-                                                <br />
+                                                <br /><br />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><br />
-                                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" />
+                                            <td>
+                                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" OnClick="btnLogin_Click1" />
                                             </td>
                                         </tr>
                                     </table>

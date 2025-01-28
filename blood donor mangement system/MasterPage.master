@@ -37,8 +37,85 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style1 {
-            font-size: medium;
+            font-size: large;
         }
+
+        /* Navbar */
+.navbar {
+    background-color: #1E3A5F; /* Deep Blue for navbar */
+    border: none;
+    border-radius: 0px;
+    height:50px;
+}
+
+.navbar a {
+    color: #FFFFFF !important; /* White text for navbar items */
+    font-size: 16px; /* Increased font size */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+
+.navbar a:hover {
+    color: #F7B731 !important; /* Gold color on hover */
+    font-size: 16px; /* Maintain increased font size on hover */
+}
+
+
+.navbar .navbar-brand img {
+    width: 130px;
+    height: auto;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown-menu {
+    background-color: #1E3A5F;
+    border: none;
+}
+
+.navbar .dropdown-menu a {
+    color: #FFFFFF;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: #F7B731; /* Gold color on hover */
+}
+
+/* Body Background */
+body {
+    background-color: #F0F0F0; /* Light Grey background */
+    color: #333; /* Default text color */
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #F7B731; /* Gold button */
+    border: none;
+    color: #1E3A5F; /* Deep Blue text */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size:17px;
+}
+
+button:hover, .btn:hover {
+    background-color: #61A6D1; /* Soft Blue on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #1E3A5F;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+/* Links */
+a {
+    color: #1E3A5F;
+}
+
+a:hover {
+    color: #F7B731; /* Gold on hover */
+}
+
     </style>
 </head>
 <body>
@@ -46,54 +123,25 @@
     <!-- Header Navbar fixed top -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header" style="float:right;">
+            <div class="navbar-header" style="float: left;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.aspx"><i><img src="img/Mainlogo.png" width="130px" height="40px" /> </i></a>
+                <a class="navbar-brand" href="index.aspx"><i>
+                    <img src="img/Mainlogo.png" width="130px" height="40px" />
+                </i></a>
             </div>
-            <div class="navbar-collapse collapse" style="float:left;font-size:14px;">
+            <div class="navbar-collapse collapse" style="float:right;font-size:14px;">
                 <!-- Left nav -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li runat="server" id="home"><a href="ContactUs.aspx">Contact Us</a></li>
+                    <li runat="server" id="Li2"><a href="index.aspx">Home</a></li>
+                    <li runat="server" id="home"><a href="contact.aspx">Contact Us</a></li>
+                    <li runat="server" id="Li6"><a href="Services.aspx">Services</a></li>
                     <li runat="server" id="portfolio"><a href="registeration.aspx">New Donor</a></li>
-                    <li class="dropdown" runat="server" id="blog"><a style="cursor:pointer">Services</a>
-                        <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
-                            <li><a href="Donar.aspx">Search for Donor</a></li>
-                            <li><a href="bloodtype.aspx">Search Blood Type</a></li>
-                          <%--  <li><a href="#">News and Events</a></li>--%>
-                        </ul>
-                    </li>
-                  
-                      <%-- <div class="navbar-form" role="search">
-                            <div class="input-group">
-                                <asp:TextBox ID="txtsearch" runat="server" placeholder="Search the site" class="form-control"></asp:TextBox>
-                                <span class="input-group-btn">
-                                    <asp:LinkButton runat="server" ID="lbsearch" ToolTip="Search" CssClass="btn btn-default"
-                                        Text='<i class="glyphicon glyphicon-search"></i>' />
-                                </span>
-                            </div>
-                        </div>--%>
-                    </li>
+                    <li runat="server" id="Li5"><a href="search.aspx">Donor Search</a></li>
                     <li runat="server" id="LiLogin"><a href="login.aspx">Login</a></li>
-                 
-                    <li>
-                        <a style="cursor:pointer;" class="dropdown-toggle" data-toggle="dropdown" href="About Initiative.aspx">About Initiative <span class="caret"></span></a> 
-                    </li>
-                    <li runat="server" id="contact"><a href="index.aspx">Home</a></li>
-                    <li class="dropdown" runat="server" id="Li2"><asp:LinkButton ID="btnUserName" runat="server">Services</asp:LinkButton>
-                        <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
-                      
-                            <li runat="server" id="Li3">
-                    <asp:LinkButton runat="server" Visible="true" ID="LinkButton1" OnClick ="LinkButton1_Click">Edit Profile</asp:LinkButton>
-                    </li>
-                            
-                                   <li runat="server" id="Li1">
-                    <asp:LinkButton runat="server" Visible="False" ID="liLogOut" OnClick="liLogOut_Click">Logout</asp:LinkButton>
-                    </li>
-                        </ul>
-                    </li>
+                    <li><a href="About Initiative.aspx">About Initiative</a></li>
                 </ul>
             </div>
         </div>

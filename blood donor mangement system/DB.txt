@@ -1,0 +1,19 @@
+Database name is [BloodDB]
+
+first table is BloodDonorRegistration
+feilds
+
+
+DonorID	int				Unchecked
+FullName		nvarchar(255)	Unchecked
+Gender			nvarchar(50)	Unchecked
+DOB			date		Unchecked
+Weight			decimal(5, 2)	Unchecked
+BloodGroup		nvarchar(10)	Unchecked
+MobileNumber		nvarchar(15)	Unchecked
+EmailAddress		nvarchar(255)	Unchecked
+Address			nvarchar(500)	Checked
+Password		nvarchar(255)	Unchecked
+PreviousDonations	nvarchar(50)	Checked
+RegistrationDate	datetime	Checked
+					

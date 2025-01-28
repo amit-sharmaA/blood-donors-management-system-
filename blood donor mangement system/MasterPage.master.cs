@@ -1,66 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SetCurrentPage();
-        if (Session["username"] == null)
+        if (!IsPostBack)
         {
-
-            liLogOut.Visible = false;
-            Li2.Visible = false;
-
+            if (Session["email"] == null)
+            {
+                LiLogin.Visible = false; // Show Login if the user is not logged in
+                Li2.Visible = true;    // Hide Services or other links
+            }
+            else
+            {
+                LiLogin.Visible = false; // Hide Login link
+                Li2.Visible = true;      // Show Services or other logged-in links
+            }
         }
-        else
-        {
-            liLogOut.Visible = true;
-            LiLogin.Visible = false;
-            btnUserName.Text = Session["username"].ToString() + "  مرحبا   ";
-
-        }
-    }
-    private void SetCurrentPage()
-    {
-        var pageName = GetPageName();
-
-        switch (pageName)
-        {
-            case "index.aspx":
-                home.Attributes["class"] = "active";
-                break;
-            case "portfolio.aspx":
-                portfolio.Attributes["class"] = "active";
-                break;
-            case "blog.aspx":
-                blog.Attributes["class"] = "active";
-                break;
-            case "contact.aspx":
-                contact.Attributes["class"] = "active";
-                break;
-        }
-    }
-    private string GetPageName()
-    {
-        return Request.Url.ToString().Split('/').Last();
-    }
-
-    protected void liLogOut_Click(object sender, EventArgs e)
-    {
-        Session.RemoveAll();
-        Response.Redirect("~/login.aspx");
-        liLogOut.Visible = false;
-    }
-
-
-
-    protected void LinkButton1_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("MyProfile2.aspx");
     }
 }
